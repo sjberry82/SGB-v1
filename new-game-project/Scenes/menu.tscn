@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bbvbfgsytow76"]
+
+[ext_resource type="Script" uid="uid://dw83x2no1inlq" path="res://Scripts/menu.gd" id="1_cayip"]
+[ext_resource type="Texture2D" uid="uid://d08abotiorfpf" path="res://Sprites/Background/Underground.png" id="2_158mb"]
+[ext_resource type="FontFile" uid="uid://2lienln4qc6a" path="res://Fonts/Giant Robots.ttf" id="3_wwsa2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrr33"]
+font = ExtResource("3_wwsa2")
+font_size = 108
+shadow_size = 15
+shadow_color = Color(0, 0.7176471, 0.13333334, 0.83137256)
+
+[node name="Menu" type="Control" unique_id=558035085]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cayip")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1897538121]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_158mb")
+
+[node name="Title" type="Label" parent="." unique_id=1095077330]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -530.5
+offset_top = -147.895
+offset_right = 530.5
+offset_bottom = -24.894958
+grow_horizontal = 2
+grow_vertical = 2
+text = "SUPER GHOST BROS"
+label_settings = SubResource("LabelSettings_mrr33")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=386016520]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_right = 144.0
+offset_bottom = 134.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayButton" type="Button" parent="VBoxContainer" unique_id=353063578]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=1917382633]
+custom_minimum_size = Vector2(300, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_wwsa2")
+theme_override_font_sizes/font_size = 50
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

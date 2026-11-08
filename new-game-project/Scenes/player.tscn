@@ -1,0 +1,275 @@
+[gd_scene format=3 uid="uid://be8qbmt0fe144"]
+
+[ext_resource type="Script" uid="uid://c3ubxpp10k6x6" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://kbqwu2sfxiam" path="res://Sprites/Character/GhostMove.png" id="2_cvnsp"]
+[ext_resource type="Script" uid="uid://dnaasseymj631" path="res://Scripts/camera_shake.gd" id="3_gymyn"]
+[ext_resource type="Texture2D" uid="uid://c6wcsrpr0jfps" path="res://Sprites/Character/GhostIdle01.png" id="3_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://dt3tjm6b2uw7p" path="res://Sprites/Character/GhostJump01.png" id="6_pu2lt"]
+[ext_resource type="Texture2D" uid="uid://b6mafk4b8a7x5" path="res://Sprites/Character/GhostJump02.png" id="7_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://camhtrax0ygqr" path="res://Sprites/Character/GhostJump03.png" id="8_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://fta5kxxodgfn" path="res://Sprites/Objects/HealthMarker.png" id="9_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://cdlf8246s2god" path="res://Sprites/Character/GhostJump04.png" id="9_h4iuc"]
+[ext_resource type="Script" uid="uid://dsa5r4s81uovi" path="res://Scripts/player_ui.gd" id="9_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://dxj7sq8kcu41q" path="res://Sprites/Character/GhostJump05.png" id="10_fd4e3"]
+[ext_resource type="FontFile" uid="uid://2lienln4qc6a" path="res://Fonts/Giant Robots.ttf" id="12_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://dnkibwskdrj4v" path="res://Sprites/Character/GhostDead.png" id="13_7dp3o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mrr33"]
+radius = 6.0
+height = 12.0
+
+[sub_resource type="Animation" id="Animation_fkybt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_cvnsp")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -9)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -9)]
+}
+
+[sub_resource type="Animation" id="Animation_ukyrk"]
+resource_name = "death"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_7dp3o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -9), Vector2(0, -150)]
+}
+
+[sub_resource type="Animation" id="Animation_cvnsp"]
+resource_name = "idle"
+length = 0.1017
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [ExtResource("3_tx1dd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -7)]
+}
+
+[sub_resource type="Animation" id="Animation_qqcod"]
+resource_name = "jump"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("6_pu2lt"), ExtResource("7_ukyrk"), ExtResource("8_7dp3o"), ExtResource("9_h4iuc"), ExtResource("10_fd4e3")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.001, 0.29878575, 0.299546, 0.40000004),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -9), Vector2(0, -9), Vector2(0, -9), Vector2(0, -7.503529), Vector2(0, -7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.299546),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_tx1dd"]
+resource_name = "move"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("2_cvnsp"), ExtResource("2_cvnsp")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6t5aa"]
+_data = {
+&"RESET": SubResource("Animation_fkybt"),
+&"death": SubResource("Animation_ukyrk"),
+&"idle": SubResource("Animation_cvnsp"),
+&"jump": SubResource("Animation_qqcod"),
+&"move": SubResource("Animation_tx1dd")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1ek2"]
+resource_local_to_scene = true
+font_size = 20
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0.8156863)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrr33"]
+font = ExtResource("12_ukyrk")
+font_size = 80
+font_color = Color(1, 0, 0, 0.80784315)
+outline_size = 4
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Player" type="CharacterBody2D" unique_id=17176987 groups=["Player"]]
+collision_mask = 2
+script = ExtResource("1_cvnsp")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=232074874]
+texture_filter = 1
+position = Vector2(0, -9)
+texture = ExtResource("2_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=207872464]
+position = Vector2(0, -9)
+shape = SubResource("CapsuleShape2D_mrr33")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=243538276]
+position = Vector2(0, -30)
+zoom = Vector2(3, 3)
+script = ExtResource("3_gymyn")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=381843763]
+libraries/ = SubResource("AnimationLibrary_6t5aa")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=538999207]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1584906004]
+script = ExtResource("9_tx1dd")
+
+[node name="HealthContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1748757878]
+offset_right = 128.0
+offset_bottom = 40.0
+
+[node name="HealthMarker" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=62240524]
+layout_mode = 2
+texture = ExtResource("9_f1ek2")
+expand_mode = 2
+
+[node name="HealthMarker2" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1022522847]
+layout_mode = 2
+texture = ExtResource("9_f1ek2")
+expand_mode = 2
+
+[node name="HealthMarker3" type="TextureRect" parent="CanvasLayer/HealthContainer" unique_id=1801370609]
+layout_mode = 2
+texture = ExtResource("9_f1ek2")
+expand_mode = 2
+
+[node name="ScoreText" type="Label" parent="CanvasLayer" unique_id=1250604329]
+offset_left = 11.0
+offset_top = 33.0
+offset_right = 115.0
+offset_bottom = 92.0
+text = "Score : 000
+"
+label_settings = SubResource("LabelSettings_f1ek2")
+
+[node name="GameOver" type="Label" parent="CanvasLayer" unique_id=1576746620]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -47.0
+offset_top = -11.5
+offset_right = 47.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_mrr33")

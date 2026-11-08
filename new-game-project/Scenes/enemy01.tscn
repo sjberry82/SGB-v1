@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://hixcqlec3eu5"]
+
+[ext_resource type="Script" uid="uid://6shjaj6s641t" path="res://Scripts/enemy01.gd" id="1_l51d3"]
+[ext_resource type="Texture2D" uid="uid://5q2526k67ku5" path="res://Sprites/Objects/MushroomBad.png" id="2_0c6qi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mrr33"]
+radius = 5.0990195
+
+[node name="Enemy01" type="Area2D" unique_id=1548661557]
+script = ExtResource("1_l51d3")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=165863535]
+texture = ExtResource("2_0c6qi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=129827590]
+shape = SubResource("CircleShape2D_mrr33")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1062096139]
+root_node = NodePath("../Area2D")
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=545363782]
+target_position = Vector2(-6, 0)
+collision_mask = 2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
