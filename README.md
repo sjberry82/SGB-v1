@@ -8,6 +8,7 @@ I completed the "Zenva Create a Complete 2D Platformer in Godot" course, proof b
 
 The demo is playable on Itch.io here, [SUPER GHOST BROS](https://sjberry82.itch.io/superghostbros)
 
+Screenshot of game running.
 <img width="1147" height="640" alt="SGB Level 1" src="https://github.com/user-attachments/assets/f1541422-622d-4360-babf-dd9ca8b36245" />
 
 Sound assets are from [Kenney.nl](https://kenney.nl/assets/category:Audio) Thanks Kenney!
