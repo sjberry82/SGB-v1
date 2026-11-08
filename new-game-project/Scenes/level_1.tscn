@@ -82,6 +82,5 @@ position = Vector2(1253, -6)
 position = Vector2(1507, -6)
 
 [node name="EndFlag" parent="." unique_id=154200681 instance=ExtResource("7_lsmp6")]
-position = Vector2(1881, -111)
-scale = Vector2(-0.98683906, 0.88)
+position = Vector2(1883, -110)
 scene_to_load = ExtResource("8_xrdnt")
