@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://dxksi4tr8rr8c"]
+
+[ext_resource type="Texture2D" uid="uid://d08abotiorfpf" path="res://Sprites/Background/Underground.png" id="1_5pkqa"]
+[ext_resource type="Script" uid="uid://de4vo3nraen06" path="res://Scripts/end_scene.gd" id="1_5rked"]
+[ext_resource type="FontFile" uid="uid://2lienln4qc6a" path="res://Fonts/Giant Robots.ttf" id="3_fgb5u"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrr33"]
+font_size = 30
+
+[node name="EndScene" type="Control" unique_id=1251815184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5rked")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1144801302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=611410288]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.5
+offset_top = -321.5
+offset_right = 573.5
+offset_bottom = 321.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5pkqa")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=48820725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5
+offset_top = 61.5
+offset_right = -2.5
+offset_bottom = 61.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Once the Ghost reached their destination, they found nothing.
+Not even a sign. Just an empty Black Void.
+There does not seem to be anything at the end.
+Could the Ghost's purpose be in another place?
+Was the entire point just to reach the end with the most coins?
+No, that cannot be the entire point. Can it?
+There must be a deeper meaning…"
+label_settings = SubResource("LabelSettings_mrr33")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1838041932]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -91.0
+offset_top = -168.0
+offset_right = 92.0
+offset_bottom = -80.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="MainMenuButton" type="Button" parent="VBoxContainer" unique_id=1877401081]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fgb5u")
+theme_override_font_sizes/font_size = 30
+text = "MAIN MENU"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=509637491]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_fgb5u")
+theme_override_font_sizes/font_size = 30
+text = "QUIT"
+
+[connection signal="pressed" from="VBoxContainer/MainMenuButton" to="." method="_on_main_menu_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

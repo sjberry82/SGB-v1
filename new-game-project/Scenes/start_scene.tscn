@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://ydxd0ru2cbcc"]
+
+[ext_resource type="Script" uid="uid://xmg1b18pp4qr" path="res://Scripts/start_scene.gd" id="1_8turk"]
+[ext_resource type="Texture2D" uid="uid://d08abotiorfpf" path="res://Sprites/Background/Underground.png" id="1_82sop"]
+[ext_resource type="Texture2D" uid="uid://c6wcsrpr0jfps" path="res://Sprites/Character/GhostIdle01.png" id="2_aeweq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrr33"]
+font_size = 29
+
+[node name="StartScene" type="Control" unique_id=1251815184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8turk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1144801302]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=611410288]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -573.5
+offset_top = -321.5
+offset_right = 573.5
+offset_bottom = 321.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_82sop")
+
+[node name="Label" type="Label" parent="ColorRect/TextureRect" unique_id=48820725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2.5
+offset_top = -67.5
+offset_right = -2.5
+offset_bottom = -67.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "A Ghost awakens as it plummets towards the ground of an unknown place.
+The Ghost doesn't even know why it is here.
+
+\"What is going on!\""
+label_settings = SubResource("LabelSettings_mrr33")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=701548993]
+position = Vector2(571, 383)
+scale = Vector2(3.36, 3.36)
+texture = ExtResource("2_aeweq")

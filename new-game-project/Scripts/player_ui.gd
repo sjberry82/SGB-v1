@@ -21,4 +21,4 @@ func _update_healthmarkers(health: int):
 		healthmarkers[i].visible = i < health
 		
 func _update_score(score : int):
-	score_text.text = "Score: " + str(score)
+	score_text.text = "Coins: " + str(score)
