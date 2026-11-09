@@ -1,6 +1,8 @@
 SDEV-248 Individual Project 01
 
-The demo is playable on Itch.io here, [SUPER GHOST](https://sjberry82.itch.io/superghost)
+The demo is playable on Itch.io here, [SUPER GHOST Demo](https://sjberry82.itch.io/superghost)
+
+Link to a video of the game running can be found here, [SUPER GHOST Video](https://youtu.be/pG3fMYF0QC0)
 
 Screenshot of game running.
 <img width="1147" height="640" alt="SGB Level 1" src="https://github.com/user-attachments/assets/f1541422-622d-4360-babf-dd9ca8b36245" />
