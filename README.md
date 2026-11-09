@@ -6,7 +6,7 @@ I completed the "Zenva Create a Complete 2D Platformer in Godot" course, proof b
 
 <img width="1200" height="675" alt="certificate 2D Godot" src="https://github.com/user-attachments/assets/373bbfa1-ac09-43ac-8daf-e88277ad8181" />
 
-The demo is playable on Itch.io here, [SUPER GHOST](https://sjberry82.itch.io/superghostbros)
+The demo is playable on Itch.io here, [SUPER GHOST](https://sjberry82.itch.io/superghost)
 
 Screenshot of game running.
 <img width="1147" height="640" alt="SGB Level 1" src="https://github.com/user-attachments/assets/f1541422-622d-4360-babf-dd9ca8b36245" />
