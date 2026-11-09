@@ -1,4 +1,4 @@
-SDEV-248 Solo Assignment 01
+SDEV-248 Individual Project 01
 
 The assignment is to make your own art and recreating a SMB level to use them in. All the art assets were made by me using Photoshop.
 I recreated the SMB visual assets and Level Design from memory so they aren't 1:1 copies.
